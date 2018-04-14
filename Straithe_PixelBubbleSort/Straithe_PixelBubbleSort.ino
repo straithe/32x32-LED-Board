@@ -22,7 +22,6 @@
 
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
-
 void setup() {
   int colorArray[32];
   
@@ -33,7 +32,6 @@ void setup() {
     sortRow(y, colorArray);
   }
 }
-
 
 /* 
  * Sets the colors for the pixels in the row.
@@ -60,12 +58,12 @@ void colorRow(int y, int colorArray[32]) {
  * int colorArray[32]: the color tracker array
  */
 void sortRow(int y, int colorArray[32]) {
-  int color;
+  uint16_t color;
   int temporaryHue1;
   int temporaryHue2;
 
   for(int i = 0; i < matrix.width(); i++) {
-    for(int x = 0; x < matrix.width(); x++) {
+    for(int x = 0; x < matrix.width()-1; x++) {
       if(colorArray[x] > colorArray[x+1]) {
         //Temporarily stores the colors to be swapped.
         temporaryHue1 = colorArray[x];
