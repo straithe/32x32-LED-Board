@@ -22,7 +22,8 @@
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
 
-void setup() {
+void setup() 
+{
   drawGradient();
 }
 
@@ -30,7 +31,8 @@ void setup() {
 /*
  * Draws a gradient down the board.
  */
-void drawGradient() {
+void drawGradient() 
+{
   int       x, y;
   int       hue = 42; //Sets starting hue.
   uint16_t  colour;
@@ -51,6 +53,7 @@ void drawGradient() {
   }
 }
 
-void loop() {
+void loop() 
+{
   // do nothing
 }
