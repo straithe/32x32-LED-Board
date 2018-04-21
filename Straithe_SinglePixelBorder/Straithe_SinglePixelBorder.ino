@@ -21,14 +21,16 @@
 
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
-void setup() {
+void setup() 
+{
   drawBorder();
 }
 
 /*
  * Draws the border around the edge of the LED board.
  */
-void drawBorder() {
+void drawBorder() 
+{
   int      x, y;
   uint16_t c;
 
@@ -63,7 +65,8 @@ void drawBorder() {
  * Set the colour for the border. 
  * return:  uint16_t  colour  colour for the border.
  */
-uint16_t setColour() {
+uint16_t setColour() 
+{
   uint16_t colour;
 
   colour = matrix.ColorHSV(42, 255, 255, true);
@@ -71,6 +74,7 @@ uint16_t setColour() {
   return colour;
 }
 
-void loop() {
+void loop() 
+{
   // do nothing
 }
