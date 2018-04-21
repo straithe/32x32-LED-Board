@@ -22,12 +22,14 @@
 
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
-void setup() {
+void setup() 
+{
   int colorArray[32];
   
   matrix.begin();
 
-  for(int y = 0; y < matrix.height(); y++) {
+  for(int y = 0; y < matrix.height(); y++) 
+  {
     colorRow(y, colorArray);
     sortRow(y, colorArray);
   }
@@ -38,13 +40,15 @@ void setup() {
  * int y: the row to be colored
  * int colorArray[32]: holds the pixel hue values
  */
-void colorRow(int y, int colorArray[32]) {
+void colorRow(int y, int colorArray[32]) 
+{
   int hue;
   uint16_t color;
 
   // For each pixel in the row, set a color and 
   //   add to the pixel color tracker array
-  for(int x = 0; x < matrix.width(); x++) {
+  for(int x = 0; x < matrix.width(); x++) 
+  {
     hue = rand() % 255 + 1;
     colorArray[x] = hue;
     color = matrix.ColorHSV(hue, 255, 255, true);
@@ -57,14 +61,18 @@ void colorRow(int y, int colorArray[32]) {
  * int y: the row to be sorted
  * int colorArray[32]: the color tracker array
  */
-void sortRow(int y, int colorArray[32]) {
+void sortRow(int y, int colorArray[32]) 
+{
   uint16_t color;
   int temporaryHue1;
   int temporaryHue2;
 
-  for(int i = 0; i < matrix.width(); i++) {
-    for(int x = 0; x < matrix.width()-1; x++) {
-      if(colorArray[x] > colorArray[x+1]) {
+  for(int i = 0; i < matrix.width(); i++) 
+  {
+    for(int x = 0; x < matrix.width()-1; x++) 
+    {
+      if(colorArray[x] > colorArray[x+1]) 
+      {
         //Temporarily stores the colors to be swapped.
         temporaryHue1 = colorArray[x];
         temporaryHue2 = colorArray[x+1];
@@ -88,6 +96,7 @@ void sortRow(int y, int colorArray[32]) {
   }
 }
 
-void loop() {
+void loop() 
+{
   // do nothing
 }
