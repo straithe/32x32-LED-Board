@@ -1,7 +1,7 @@
 /*
- * Straithe_BubbleSort
+ * Straithe_StarField
  * 
- * Description: Bubblesorts a 32x32 LED board row by row.
+ * Description: Turns LEDs on and off on the board.
  * 
  * Written By:  Straithe
  * License:     Unlicense.
@@ -22,16 +22,14 @@
 
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
-void setup() {  
+void setup() 
+{  
   matrix.begin();
 }
 
-/* 
- * Sets the colors for the pixels in the row.
- * int y: the row to be colored
- * int colorArray[32]: holds the pixel hue values
- */
-void colorPixels() {
+
+void colorPixels() 
+{
   int hue;
   int saturation;
   int x;
@@ -47,7 +45,8 @@ void colorPixels() {
   delay(200);
 }
 
-void blankPixels() {
+void blankPixels() 
+{
   int x;
   int y;
   uint16_t color;
@@ -59,7 +58,8 @@ void blankPixels() {
   delay(200);
 }
 
-void loop() {
+void loop() 
+{
  colorPixels();
  blankPixels();
 }
